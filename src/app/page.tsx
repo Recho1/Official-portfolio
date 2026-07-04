@@ -116,9 +116,12 @@ export default function Home() {
             <p className="text-xs text-[#8a86a0]">
               © 2025 Acio Racheal · Software & AI Engineer
             </p>
-            <div className="flex gap-6">
-              <a href="mailto:rachealacio501@gmail.com" className="text-xs text-[#8a86a0] hover:text-[#c9a84c] transition-colors">
-                Email
+            <div className="flex flex-wrap gap-4 md:gap-6 justify-center">
+              <a 
+                href="mailto:rachealacio501@gmail.com?subject=Inquiry%20from%20Portfolio&body=Hi%20Racheal%2C%0D%0A%0D%0AI%20came%20across%20your%20portfolio%20and%20would%20like%20to%20get%20in%20touch%20with%20you%20regarding..." 
+                className="text-xs text-[#8a86a0] hover:text-[#c9a84c] transition-colors flex items-center gap-1"
+              >
+                <MdEmail size={12} /> Email
               </a>
               <a href="https://github.com/Recho1" target="_blank" rel="noopener" className="text-xs text-[#8a86a0] hover:text-[#c9a84c] transition-colors">
                 GitHub
