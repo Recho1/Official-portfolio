@@ -19,15 +19,15 @@ const Contact = () => {
         {/* Email Card */}
         <a 
           href="mailto:rachealacio501@gmail.com?subject=Inquiry%20from%20Portfolio&body=Hi%20Racheal%2C%0D%0A%0D%0AI%20came%20across%20your%20portfolio%20and%20would%20like%20to%20get%20in%20touch%20with%20you%20regarding..."
-          className="group bg-[#141b2d] border border-[#c9a84c]/10 rounded-xl p-5 hover:border-[#c9a84c]/40 transition-all duration-300 hover:shadow-[0_0_30px_rgba(201,168,76,0.05)]"
+          className="group bg-[#141b2d] border border-[#c9a84c]/10 rounded-xl p-4 sm:p-5 hover:border-[#c9a84c]/40 transition-all duration-300 hover:shadow-[0_0_30px_rgba(201,168,76,0.05)]"
         >
-          <div className="flex items-center gap-4">
-            <div className="w-10 h-10 rounded-full bg-[#c9a84c]/10 flex items-center justify-center group-hover:bg-[#c9a84c]/20 transition-colors flex-shrink-0">
-              <MdEmail className="w-5 h-5 text-[#c9a84c]" />
+          <div className="flex items-center gap-3 sm:gap-4">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#c9a84c]/10 flex items-center justify-center group-hover:bg-[#c9a84c]/20 transition-colors flex-shrink-0">
+              <MdEmail className="w-5 h-5 sm:w-6 sm:h-6 text-[#c9a84c]" />
             </div>
-            <div className="min-w-0">
-              <p className="text-xs text-[#8a86a0]">Email</p>
-              <p className="text-sm text-[#f5f0e8] group-hover:text-[#c9a84c] transition-colors truncate">rachealacio501@gmail.com</p>
+            <div className="min-w-0 flex-1">
+              <p className="text-[10px] sm:text-xs text-[#8a86a0]">Email</p>
+              <p className="text-xs sm:text-sm text-[#f5f0e8] group-hover:text-[#c9a84c] transition-colors truncate">rachealacio501@gmail.com</p>
             </div>
           </div>
         </a>
@@ -37,15 +37,15 @@ const Contact = () => {
           href="https://github.com/Recho1"
           target="_blank"
           rel="noopener noreferrer"
-          className="group bg-[#141b2d] border border-[#c9a84c]/10 rounded-xl p-5 hover:border-[#c9a84c]/40 transition-all duration-300 hover:shadow-[0_0_30px_rgba(201,168,76,0.05)]"
+          className="group bg-[#141b2d] border border-[#c9a84c]/10 rounded-xl p-4 sm:p-5 hover:border-[#c9a84c]/40 transition-all duration-300 hover:shadow-[0_0_30px_rgba(201,168,76,0.05)]"
         >
-          <div className="flex items-center gap-4">
-            <div className="w-10 h-10 rounded-full bg-[#c9a84c]/10 flex items-center justify-center group-hover:bg-[#c9a84c]/20 transition-colors flex-shrink-0">
-              <FaGithub className="w-5 h-5 text-[#c9a84c]" />
+          <div className="flex items-center gap-3 sm:gap-4">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#c9a84c]/10 flex items-center justify-center group-hover:bg-[#c9a84c]/20 transition-colors flex-shrink-0">
+              <FaGithub className="w-5 h-5 sm:w-6 sm:h-6 text-[#c9a84c]" />
             </div>
-            <div className="min-w-0">
-              <p className="text-xs text-[#8a86a0]">GitHub</p>
-              <p className="text-sm text-[#f5f0e8] group-hover:text-[#c9a84c] transition-colors truncate">@Recho1</p>
+            <div className="min-w-0 flex-1">
+              <p className="text-[10px] sm:text-xs text-[#8a86a0]">GitHub</p>
+              <p className="text-xs sm:text-sm text-[#f5f0e8] group-hover:text-[#c9a84c] transition-colors truncate">@Recho1</p>
             </div>
           </div>
         </a>
@@ -55,15 +55,15 @@ const Contact = () => {
           href="https://www.linkedin.com/in/racheal-acio-a70730398"
           target="_blank"
           rel="noopener noreferrer"
-          className="group bg-[#141b2d] border border-[#c9a84c]/10 rounded-xl p-5 hover:border-[#c9a84c]/40 transition-all duration-300 hover:shadow-[0_0_30px_rgba(201,168,76,0.05)]"
+          className="group bg-[#141b2d] border border-[#c9a84c]/10 rounded-xl p-4 sm:p-5 hover:border-[#c9a84c]/40 transition-all duration-300 hover:shadow-[0_0_30px_rgba(201,168,76,0.05)]"
         >
-          <div className="flex items-center gap-4">
-            <div className="w-10 h-10 rounded-full bg-[#c9a84c]/10 flex items-center justify-center group-hover:bg-[#c9a84c]/20 transition-colors flex-shrink-0">
-              <FaLinkedin className="w-5 h-5 text-[#c9a84c]" />
+          <div className="flex items-center gap-3 sm:gap-4">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#c9a84c]/10 flex items-center justify-center group-hover:bg-[#c9a84c]/20 transition-colors flex-shrink-0">
+              <FaLinkedin className="w-5 h-5 sm:w-6 sm:h-6 text-[#c9a84c]" />
             </div>
-            <div className="min-w-0">
-              <p className="text-xs text-[#8a86a0]">LinkedIn</p>
-              <p className="text-sm text-[#f5f0e8] group-hover:text-[#c9a84c] transition-colors truncate">Racheal Acio</p>
+            <div className="min-w-0 flex-1">
+              <p className="text-[10px] sm:text-xs text-[#8a86a0]">LinkedIn</p>
+              <p className="text-xs sm:text-sm text-[#f5f0e8] group-hover:text-[#c9a84c] transition-colors truncate">Racheal Acio</p>
             </div>
           </div>
         </a>
