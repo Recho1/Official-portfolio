@@ -23,10 +23,6 @@ const Navbar = () => {
     }
   };
 
-  const handleEmailClick = () => {
-    window.location.href = 'mailto:rachealacio501@gmail.com';
-  };
-
   return (
     <nav className="sticky top-0 z-50 bg-[#0a0e1a]/95 backdrop-blur-xl border-b border-[#c9a84c]/10 px-4 sm:px-6 h-16 flex items-center justify-between">
       <a href="#" className="flex items-center gap-2 sm:gap-3 group">
@@ -52,13 +48,13 @@ const Navbar = () => {
         ))}
       </ul>
 
-      <button 
-        onClick={handleEmailClick}
-        className="hidden md:flex items-center gap-2 text-xs text-[#c9a84c] border border-[#c9a84c]/30 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full hover:bg-[#c9a84c] hover:text-[#0a0e1a] transition-all duration-300 cursor-pointer"
+      <a 
+        href="mailto:rachealacio501@gmail.com" 
+        className="hidden md:flex items-center gap-2 text-xs text-[#c9a84c] border border-[#c9a84c]/30 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full hover:bg-[#c9a84c] hover:text-[#0a0e1a] transition-all duration-300"
       >
         <MdEmail className="w-4 h-4" />
         Get in Touch
-      </button>
+      </a>
 
       <button
         className="md:hidden text-[#f5f0e8] text-2xl"
@@ -83,13 +79,14 @@ const Navbar = () => {
               </li>
             ))}
             <li className="pt-2 border-t border-[#c9a84c]/10">
-              <button 
-                onClick={handleEmailClick}
-                className="inline-flex items-center gap-2 text-xs text-[#c9a84c] border border-[#c9a84c]/30 px-4 py-2 rounded-full hover:bg-[#c9a84c] hover:text-[#0a0e1a] transition-all duration-300 cursor-pointer w-full justify-center"
+              <a 
+                href="mailto:rachealacio501@gmail.com" 
+                className="inline-flex items-center gap-2 text-xs text-[#c9a84c] border border-[#c9a84c]/30 px-4 py-2 rounded-full hover:bg-[#c9a84c] hover:text-[#0a0e1a] transition-all duration-300"
+                onClick={() => setIsOpen(false)}
               >
                 <MdEmail className="w-4 h-4" />
                 Contact
-              </button>
+              </a>
             </li>
           </ul>
         </div>

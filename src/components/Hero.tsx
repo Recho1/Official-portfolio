@@ -1,14 +1,8 @@
-'use client';
-
 import Image from "next/image";
 import { MdEmail } from "react-icons/md";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Hero = () => {
-  const handleEmailClick = () => {
-    window.location.href = 'mailto:rachealacio501@gmail.com';
-  };
-
   return (
     <div className="relative min-h-[50vh] flex items-center overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-[#0a0e1a] via-[#141b2d] to-[#0a0e1a]"></div>
@@ -30,13 +24,10 @@ const Hero = () => {
               </p>
             </div>
             <div className="flex flex-wrap gap-3 mt-6">
-              <button 
-                onClick={handleEmailClick}
-                className="inline-flex items-center gap-2 px-4 py-2 text-xs border border-[#c9a84c] rounded-full text-[#c9a84c] hover:bg-[#c9a84c] hover:text-[#0a0e1a] transition-all duration-300 cursor-pointer"
-              >
+              <a href="mailto:rachealacio501@gmail.com" className="inline-flex items-center gap-2 px-4 py-2 text-xs border border-[#c9a84c] rounded-full text-[#c9a84c] hover:bg-[#c9a84c] hover:text-[#0a0e1a] transition-all duration-300">
                 <MdEmail className="w-4 h-4" />
                 Contact
-              </button>
+              </a>
               <a href="https://github.com/Recho1" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 text-xs border border-[#c9a84c] rounded-full text-[#c9a84c] hover:bg-[#c9a84c] hover:text-[#0a0e1a] transition-all duration-300">
                 <FaGithub className="w-4 h-4" />
                 GitHub
