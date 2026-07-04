@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { MdEmail } from 'react-icons/md';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
