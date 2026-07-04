@@ -10,17 +10,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-      
-      - name: Install dependencies
-        run: npm ci
-      
       - name: Install Vercel CLI
         run: npm install --global vercel
         
       - name: Deploy to Vercel
-        run: vercel --prod --token ${{ secrets.VERCEL_TOKEN }}
+        run: vercel --prod --yes --token ${{ secrets.VERCEL_TOKEN }}
