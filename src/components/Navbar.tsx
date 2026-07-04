@@ -52,7 +52,7 @@ const Navbar = () => {
         href="mailto:rachealacio501@gmail.com" 
         className="hidden md:flex items-center gap-2 text-xs text-[#c9a84c] border border-[#c9a84c]/30 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full hover:bg-[#c9a84c] hover:text-[#0a0e1a] transition-all duration-300"
       >
-        <MdEmail size={14} />
+        <MdEmail className="w-4 h-4" />
         Get in Touch
       </a>
 
@@ -84,7 +84,7 @@ const Navbar = () => {
                 className="inline-flex items-center gap-2 text-xs text-[#c9a84c] border border-[#c9a84c]/30 px-4 py-2 rounded-full hover:bg-[#c9a84c] hover:text-[#0a0e1a] transition-all duration-300"
                 onClick={() => setIsOpen(false)}
               >
-                <MdEmail size={14} />
+                <MdEmail className="w-4 h-4" />
                 Contact
               </a>
             </li>

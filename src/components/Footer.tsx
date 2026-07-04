@@ -9,7 +9,7 @@ const Footer = () => {
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
           <a 
-            href="mailto:rachealacio501@gmail.com?subject=Inquiry%20from%20Portfolio&body=Hi%20Racheal%2C%0D%0A%0D%0AI%20came%20across%20your%20portfolio%20and%20would%20like%20to%20get%20in%20touch%20with%20you%20regarding..." 
+            href="mailto:rachealacio501@gmail.com" 
             className="text-xs text-[#8a86a0] hover:text-[#c9a84c] transition-colors flex items-center gap-1.5"
           >
             <MdEmail className="w-4 h-4" />
