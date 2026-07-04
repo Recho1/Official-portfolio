@@ -1,4 +1,5 @@
 import { MdEmail } from "react-icons/md";
+import EmailLink from "./EmailLink";
 
 const Footer = () => {
   return (
@@ -8,13 +9,12 @@ const Footer = () => {
           © 2025 Acio Racheal · Software & AI Engineer
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
-          <a 
-            href="mailto:rachealacio501@gmail.com" 
-            className="text-xs text-[#8a86a0] hover:text-[#c9a84c] transition-colors flex items-center gap-1.5"
-          >
-            <MdEmail className="w-4 h-4" />
-            <span>Email</span>
-          </a>
+          <EmailLink email="rachealacio501@gmail.com">
+            <span className="text-xs text-[#8a86a0] hover:text-[#c9a84c] transition-colors flex items-center gap-1.5 cursor-pointer">
+              <MdEmail className="w-4 h-4" />
+              <span>Email</span>
+            </span>
+          </EmailLink>
           <a 
             href="https://github.com/Recho1" 
             target="_blank" 
