@@ -98,7 +98,6 @@ const Navbar = () => {
         )}
       </nav>
 
-      {/* Contact Form Modal */}
       <ContactForm isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} />
     </>
   );

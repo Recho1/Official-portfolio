@@ -42,7 +42,6 @@ const Footer = () => {
         </div>
       </footer>
 
-      {/* Contact Form Modal */}
       <ContactForm isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} />
     </>
   );

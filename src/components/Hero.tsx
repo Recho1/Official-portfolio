@@ -63,7 +63,6 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Contact Form Modal */}
       <ContactForm isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} />
     </>
   );

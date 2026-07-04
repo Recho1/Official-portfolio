@@ -1,8 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { MdEmail, MdClose } from 'react-icons/md';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { MdClose } from 'react-icons/md';
 
 interface ContactFormProps {
   isOpen: boolean;
@@ -15,8 +14,7 @@ const ContactForm = ({ isOpen, onClose }: ContactFormProps) => {
     email: '',
     message: ''
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSent, setIsSent] = useState(false);
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -25,25 +23,44 @@ const ContactForm = ({ isOpen, onClose }: ContactFormProps) => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Open email with pre-filled content
-    const subject = `Portfolio Inquiry from ${formData.name || 'Visitor'}`;
-    const body = `Name: ${formData.name || 'Not provided'}\nEmail: ${formData.email || 'Not provided'}\n\nMessage:\n${formData.message || 'No message provided'}`;
-    
-    window.location.href = `mailto:rachealacio501@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    
-    setIsSubmitting(false);
-    setIsSent(true);
-    
-    // Close after 2 seconds
-    setTimeout(() => {
-      setIsSent(false);
-      onClose();
-      setFormData({ name: '', email: '', message: '' });
-    }, 2000);
+    setStatus('sending');
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: '15a47df2-2ff0-4f04-8511-76dd8d19dcad', // 👈 REPLACE THIS with your actual key
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          subject: `Portfolio Inquiry from ${formData.name}`,
+          from_name: formData.name,
+          replyto: formData.email,
+        }),
+      });
+
+      const result = await response.json();
+      
+      if (result.success) {
+        setStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+        setTimeout(() => {
+          setStatus('idle');
+          onClose();
+        }, 3000);
+      } else {
+        setStatus('error');
+        setTimeout(() => setStatus('idle'), 3000);
+      }
+    } catch (error) {
+      setStatus('error');
+      setTimeout(() => setStatus('idle'), 3000);
+    }
   };
 
   if (!isOpen) return null;
@@ -51,7 +68,6 @@ const ContactForm = ({ isOpen, onClose }: ContactFormProps) => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm">
       <div className="bg-[#141b2d] border border-[#c9a84c]/30 rounded-2xl max-w-lg w-full p-6 md:p-8 shadow-2xl relative">
-        {/* Close button */}
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-[#8a86a0] hover:text-[#c9a84c] transition-colors"
@@ -60,27 +76,30 @@ const ContactForm = ({ isOpen, onClose }: ContactFormProps) => {
         </button>
 
         <div className="mb-6">
-          <div className="flex items-center gap-3 mb-2">
-            <div className="w-10 h-10 rounded-full bg-[#c9a84c]/10 flex items-center justify-center">
-              <MdEmail className="w-5 h-5 text-[#c9a84c]" />
-            </div>
-            <h2 className="text-xl font-light text-[#f5f0e8]">Send a Message</h2>
-          </div>
-          <p className="text-sm text-[#8a86a0]">Fill in the details below and I'll get back to you.</p>
+          <h2 className="text-xl font-light text-[#f5f0e8]">Send a Message</h2>
+          <p className="text-sm text-[#8a86a0]">Fill in the details and I'll get back to you.</p>
         </div>
 
-        {isSent ? (
+        {status === 'success' ? (
           <div className="text-center py-8">
             <div className="w-16 h-16 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-4">
-              <span className="text-3xl">✓</span>
+              <span className="text-3xl text-green-500">✓</span>
             </div>
             <p className="text-[#f5f0e8] font-medium">Message Sent!</p>
-            <p className="text-sm text-[#8a86a0] mt-1">Opening your email client...</p>
+            <p className="text-sm text-[#8a86a0] mt-1">I'll get back to you soon.</p>
+          </div>
+        ) : status === 'error' ? (
+          <div className="text-center py-8">
+            <div className="w-16 h-16 rounded-full bg-red-500/20 flex items-center justify-center mx-auto mb-4">
+              <span className="text-3xl text-red-500">✕</span>
+            </div>
+            <p className="text-[#f5f0e8] font-medium">Something went wrong</p>
+            <p className="text-sm text-[#8a86a0] mt-1">Please try again or email me directly.</p>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-xs text-[#8a86a0] mb-1.5">Your Name</label>
+              <label className="block text-xs text-[#8a86a0] mb-1.5">Your Name *</label>
               <input
                 type="text"
                 name="name"
@@ -93,7 +112,7 @@ const ContactForm = ({ isOpen, onClose }: ContactFormProps) => {
             </div>
 
             <div>
-              <label className="block text-xs text-[#8a86a0] mb-1.5">Your Email</label>
+              <label className="block text-xs text-[#8a86a0] mb-1.5">Your Email *</label>
               <input
                 type="email"
                 name="email"
@@ -106,7 +125,7 @@ const ContactForm = ({ isOpen, onClose }: ContactFormProps) => {
             </div>
 
             <div>
-              <label className="block text-xs text-[#8a86a0] mb-1.5">Your Message</label>
+              <label className="block text-xs text-[#8a86a0] mb-1.5">Your Message *</label>
               <textarea
                 name="message"
                 value={formData.message}
@@ -120,10 +139,10 @@ const ContactForm = ({ isOpen, onClose }: ContactFormProps) => {
 
             <button
               type="submit"
-              disabled={isSubmitting}
+              disabled={status === 'sending'}
               className="w-full py-3 bg-[#c9a84c] text-[#0a0e1a] font-medium rounded-lg hover:bg-[#b8973a] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {isSubmitting ? 'Sending...' : 'Send Message'}
+              {status === 'sending' ? 'Sending...' : 'Send Message'}
             </button>
           </form>
         )}
