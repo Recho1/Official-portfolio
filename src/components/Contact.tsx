@@ -16,7 +16,6 @@ const Contact = () => {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {/* Email Card */}
         <a 
           href="mailto:rachealacio501@gmail.com?subject=Inquiry%20from%20Portfolio&body=Hi%20Racheal%2C%0D%0A%0D%0AI%20came%20across%20your%20portfolio%20and%20would%20like%20to%20get%20in%20touch%20with%20you%20regarding..."
           className="group bg-[#141b2d] border border-[#c9a84c]/10 rounded-xl p-4 sm:p-5 hover:border-[#c9a84c]/40 transition-all duration-300 hover:shadow-[0_0_30px_rgba(201,168,76,0.05)]"
@@ -32,7 +31,6 @@ const Contact = () => {
           </div>
         </a>
 
-        {/* GitHub Card */}
         <a 
           href="https://github.com/Recho1"
           target="_blank"
@@ -50,7 +48,6 @@ const Contact = () => {
           </div>
         </a>
 
-        {/* LinkedIn Card */}
         <a 
           href="https://www.linkedin.com/in/racheal-acio-a70730398"
           target="_blank"

@@ -24,16 +24,16 @@ const Hero = () => {
               </p>
             </div>
             <div className="flex flex-wrap gap-3 mt-6">
-              <a href="mailto:rachealacio501@gmail.com" className="chip">
-                <MdEmail size={16} />
+              <a href="mailto:rachealacio501@gmail.com" className="inline-flex items-center gap-2 px-4 py-2 text-xs border border-[#c9a84c] rounded-full text-[#c9a84c] hover:bg-[#c9a84c] hover:text-[#0a0e1a] transition-all duration-300">
+                <MdEmail className="w-4 h-4" />
                 Contact
               </a>
-              <a href="https://github.com/Recho1" target="_blank" rel="noopener noreferrer" className="chip">
-                <FaGithub size={16} />
+              <a href="https://github.com/Recho1" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 text-xs border border-[#c9a84c] rounded-full text-[#c9a84c] hover:bg-[#c9a84c] hover:text-[#0a0e1a] transition-all duration-300">
+                <FaGithub className="w-4 h-4" />
                 GitHub
               </a>
-              <a href="https://www.linkedin.com/in/racheal-acio-a70730398" target="_blank" rel="noopener noreferrer" className="chip">
-                <FaLinkedin size={16} />
+              <a href="https://www.linkedin.com/in/racheal-acio-a70730398" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 text-xs border border-[#c9a84c] rounded-full text-[#c9a84c] hover:bg-[#c9a84c] hover:text-[#0a0e1a] transition-all duration-300">
+                <FaLinkedin className="w-4 h-4" />
                 LinkedIn
               </a>
             </div>
