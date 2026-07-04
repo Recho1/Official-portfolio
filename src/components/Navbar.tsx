@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { MdEmail } from "react-icons/md";
+import EmailLink from "./EmailLink";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,13 +49,12 @@ const Navbar = () => {
         ))}
       </ul>
 
-      <a 
-        href="mailto:rachealacio501@gmail.com" 
-        className="hidden md:flex items-center gap-2 text-xs text-[#c9a84c] border border-[#c9a84c]/30 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full hover:bg-[#c9a84c] hover:text-[#0a0e1a] transition-all duration-300"
-      >
-        <MdEmail className="w-4 h-4" />
-        Get in Touch
-      </a>
+      <EmailLink email="rachealacio501@gmail.com">
+        <span className="hidden md:flex items-center gap-2 text-xs text-[#c9a84c] border border-[#c9a84c]/30 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full hover:bg-[#c9a84c] hover:text-[#0a0e1a] transition-all duration-300 cursor-pointer">
+          <MdEmail className="w-4 h-4" />
+          Get in Touch
+        </span>
+      </EmailLink>
 
       <button
         className="md:hidden text-[#f5f0e8] text-2xl"
@@ -79,14 +79,12 @@ const Navbar = () => {
               </li>
             ))}
             <li className="pt-2 border-t border-[#c9a84c]/10">
-              <a 
-                href="mailto:rachealacio501@gmail.com" 
-                className="inline-flex items-center gap-2 text-xs text-[#c9a84c] border border-[#c9a84c]/30 px-4 py-2 rounded-full hover:bg-[#c9a84c] hover:text-[#0a0e1a] transition-all duration-300"
-                onClick={() => setIsOpen(false)}
-              >
-                <MdEmail className="w-4 h-4" />
-                Contact
-              </a>
+              <EmailLink email="rachealacio501@gmail.com">
+                <span className="inline-flex items-center gap-2 text-xs text-[#c9a84c] border border-[#c9a84c]/30 px-4 py-2 rounded-full hover:bg-[#c9a84c] hover:text-[#0a0e1a] transition-all duration-300 cursor-pointer">
+                  <MdEmail className="w-4 h-4" />
+                  Contact
+                </span>
+              </EmailLink>
             </li>
           </ul>
         </div>
